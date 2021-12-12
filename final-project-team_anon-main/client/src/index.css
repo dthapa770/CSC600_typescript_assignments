@@ -1,0 +1,415 @@
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --sec: rgba(255, 204, 0, 1);
+  --pri: rgba(35, 17, 97, 1);
+}
+
+.bg-trans {
+  background-color: transparent;
+}
+
+.pri {
+  color: var(--pri)
+}
+
+.bg-pri {
+  background-color: var(--pri)
+}
+
+.b--pri {
+  border-color: var(--pri)
+}
+
+.sec {
+  color: var(--sec)
+}
+
+.bg-sec {
+  background-color: var(--sec)
+}
+
+.b--sec {
+  border-color: var(--sec)
+}
+
+.trans {
+  transition: all 0.2s ease-in-out
+}
+
+.spin {
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 1000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+/* trumpet */
+
+#wrapper {
+  position: relative;
+  left: 300px;
+  top: 100px;
+}
+
+#main-pipe {
+  background-color: #f5c842;
+  width: 350px;
+  height: 75px;
+  border-radius: 1000px;
+  padding: 15px;
+  z-index: 99999;
+}
+#main-pipe .filler {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 1000px;
+  z-index: 1000;
+}
+
+#lead-pipe {
+  width: 100px;
+  height: 15px;
+  background-color: #f5c842;
+  position: absolute;
+  top: 0;
+  left: -15px;
+}
+
+#reciever {
+  height: 15px;
+  width: 20px;
+  position: absolute;
+  background-color: #f5c842;
+  top: 0;
+  left: -20px;
+}
+
+#mouthpiece-stem {
+  background-color: #ccc;
+  position: absolute;
+  top: 1px;
+  left: -40px;
+  width: 20px;
+  height: 13px;
+}
+
+#mouthpiece-cup {
+  height: 25px;
+  width: 10px;
+  position: absolute;
+  top: -5px;
+  left: -50px;
+  background-color: #ccc;
+  border-radius: 20px;
+  z-index: 1001;
+}
+
+#valves {
+  position: relative;
+  height: 130px;
+  top: -90px;
+  left: 140px;
+  width: 125px;
+  z-index: 100000;
+}
+#valves .valve {
+  height: 100%;
+  width: 15%;
+  background-color: #f5c842;
+  position: absolute;
+}
+#valves .valve.pressed .piston {
+  height: 5px;
+  top: -5px;
+}
+#valves .valve.pressed .button {
+  top: -5px;
+}
+#valves .valve .bottom-cap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #b3b3b3;
+  height: 2px;
+}
+#valves .valve .top-cap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #b3b3b3;
+  height: 2px;
+}
+#valves .valve .piston {
+  position: absolute;
+  top: -15px;
+  width: 4px;
+  height: 15px;
+  background-color: #ccc;
+  left: 7px;
+}
+#valves .valve .button {
+  width: 12px;
+  height: 4px;
+  position: absolute;
+  top: -19px;
+  left: 3px;
+  background-color: #ccc;
+}
+#valves .valve:nth-child(1) {
+  left: 0;
+}
+#valves .valve:nth-child(2) {
+  left: 30%;
+}
+#valves .valve:nth-child(3) {
+  left: 60%;
+}
+
+#bell {
+  position: absolute;
+  background-color: #f5c842;
+  top: -50px;
+  right: -100px;
+  height: 130px;
+  width: 300px;
+  z-index: 100;
+}
+#bell .top-flare {
+  background-color: white;
+  position: absolute;
+  top: -150px;
+  right: -10px;
+  width: 1000px;
+  height: 200px;
+  border-radius: 200px;
+  z-index: 100;
+}
+#bell .bottom-flare {
+  position: absolute;
+  background-color: white;
+  width: 1000px;
+  border-radius: 200px;
+  height: 200px;
+  right: -3px;
+  bottom: -135px;
+  z-index: 100;
+}
+#wrapper .front-triangle{
+  position: relative;
+  left: 100px;
+  top: -57px;
+  border-color: transparent #f5c842 transparent transparent;
+  border-style: solid;
+  border-width: 100px 100px 100px 100px;
+  height: 0px;
+  width: 0px;
+}
+/* trumpet end */
+
+/* guitar */
+#guitar .board {
+  background-color: brown;
+  width: 100%;
+  height: 200px;
+}
+
+#guitar .string{
+  width: 100%;
+  background-color: grey;
+  height: 7px;
+  margin-top: 29px;
+}
+
+#guitar .frets{
+  position: relative;
+  height: 100%;
+  display: flex;
+}
+
+#guitar .strings{
+  position: relative;
+  height: 100%;
+  top: -220px;
+}
+
+#guitar .fret{
+  height: 100%;
+  width: 20px;
+  background-color: lightsalmon;
+  margin-left: 230px;
+}
+
+#guitar .string:active{
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* guitar end*/
+
+/* flute */
+.flute {
+  width: 800px;
+  height: 80px;
+  margin: auto;
+}
+
+.flute .fluteBody{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: bisque;
+}
+
+.flute .fluteHoles{
+  display: flex;
+}
+
+.flute .fluteHoles .hole{
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    margin-top: 30px;
+    margin-left: 110px;
+}
+
+.flute .fluteMouth{
+  width: 100px;
+  height: 100px;
+  background-color: saddlebrown;
+  position: absolute;
+  top: 20px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  left: 365px;
+}
+
+.flute .hole .finger{
+  width: 40px;
+  height: 80px;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  position: relative;
+  left: -5px;
+  background-color: lightsalmon;
+}
+
+.flute .hole .finger .nail{
+  width: 35px;
+  height: 40px;
+  border-radius: 40% 40% 4px 4px;
+  position: relative;
+  left: 2px;
+  background-color: lightcoral;
+}
+
+/* flute end */
+
+.drums {
+  display: flex;
+  height: 400px;
+}
+
+.drums .firstDrum{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: blue;
+  position: relative;
+  left: 4rem;
+}
+
+.drums .secondDrum{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+  left: 8rem;
+}
+
+.drums .thirdDrum{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: purple;
+  position: relative;
+  left: 10rem;
+}
+
+.drums .innerDrum{
+  background: rgb(237,236,137);
+  background: linear-gradient(90deg, rgba(237,236,137,1) 0%, rgba(234,238,175,1) 100%);
+  margin: auto;
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  top: 5px;
+  position: relative;
+}
+
+.drums div {
+  border: 5px dashed silver;
+}
